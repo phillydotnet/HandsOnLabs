@@ -1,5 +1,9 @@
 # ASP.NET Core SignalR Lab
 
+## YouTube Replay
+The replay of the lab is at our YouTube Channel at:
+https://www.youtube.com/watch?v=vHgMD7I3Duw&t=783s
+
 ## Prerequisites
 
 * Visual Studio Code - *([ Download ](https://code.visualstudio.com/download))*

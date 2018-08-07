@@ -1,5 +1,9 @@
 # ASP.NET Core Middleware Lab
 
+## YouTube Replay
+The replay of this lab can be found at our YouTube channel at:
+https://youtu.be/mbZfuVfgI8w?t=13s
+
 ## Create a new web project
 * From the command line, in a folder of your choosing, type the following:
 
