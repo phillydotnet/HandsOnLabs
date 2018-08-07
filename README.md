@@ -4,7 +4,7 @@ Hands on Labs materials and Instructions categorized by year and month.  Video r
 # 2018
 
 ## August - Hands-On with Blazor
-[GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2018/08)
+[GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2018/08) - **GO HERE TO GET READY FOR LAB**
 
 [Watch Live on Mixer](https://mixer.com/PhillyDotNet)
 
