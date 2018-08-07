@@ -3,6 +3,11 @@ Hands on Labs materials and Instructions categorized by year and month.  Video r
 
 # 2018
 
+## August - Hands-On with Blazor
+[GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2018/08)
+
+[Watch Live on Mixer](https://mixer.com/PhillyDotNet)
+
 ## July - ASP.NET Core 2.1 SignalR
 [GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2018/07)
 
