@@ -1,4 +1,4 @@
-# H2 Useful Background Links
+## Useful Background Links
 
 [Microsoft Edge Support Status](https://developer.microsoft.com/en-us/microsoft-edge/platform/status/webassemblymvp/)
 
