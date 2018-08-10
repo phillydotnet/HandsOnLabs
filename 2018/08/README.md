@@ -1,19 +1,29 @@
 # ASP.NET Blazor Hands-On Lab
 
+## Meetup and Replay information
+
+### YouTube replay
+You may watch a replay of this meetup and lab at our YouTube channel. Please like the video so we know to produce more of this type of content.  Please subscribe to the channel to get updates whenever we add more content from our meetups and events!
+
+https://www.youtube.com/watch?v=q1ca_Als86g
+
+
+### Join the Philly.NET Meetup
+For information on future streams and events, please be sure to join the meetup at:
+
+https://www.meetup.com/Philly-NET/
+
+### Recorded Live On Mixer
+This lab was presented live on August 8th, 2018 at Philly.NET's Mixer channel: https://mixer.com/PhillyDotNet
+
+We welcome everyone to join the Mixer chatroom and ask questions that will be relayed directly to the speaker.
+
 ## PLEASE NOTE
 Blazor is an experimental project and is not ready for production.  It is not even released as an alpha.  Significant changes to APIs and design are likely to occur and there is no official word on any timeframes or if the project will be seen through to completion.
 
 If you like Blazor, consider using the watch and star features of GitHub to indicate your interest, and contribute to the work or the discussion about issues. (Last updated: 8/7/2018)
 
 [Official ASP.NET Blazor Repository](https://github.com/aspnet/blazor)
-
-## Watch Live On Mixer
-This lab will be presented live on August 8th, 2018.  The stream goes live at 5:45pm US Eastern (UTC -4) at the PhillyDotNet Mixer channel: https://mixer.com/PhillyDotNet
-
-Join the Mixer chatroom to ask questions that will be relayed directly to the speaker.
-
-You may also watch on YouTube:
-https://www.youtube.com/PhillyDotNet
 
 ## Prerequisites
 The best development experience right now is using Visual Studio 2017.
