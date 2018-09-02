@@ -11,7 +11,7 @@ Hands on Labs materials and Instructions categorized by year and month.  Video r
 ## July - ASP.NET Core 2.1 SignalR
 [GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2018/07)
 
-[YouTube Replay](https://www.youtube.com/watch?v=vHgMD7I3Duw&t=775s)
+[YouTube Replay](https://www.youtube.com/watch?v=vHgMD7I3Duw)
 
 ## June - ASP.NET Core 2.x Middleware / Web APIs
 [GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2018/06)
