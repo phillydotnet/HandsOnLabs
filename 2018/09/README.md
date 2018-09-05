@@ -99,7 +99,7 @@ Git uses a cascading approach where it determines settings based on walking from
 *Read more about First-Time Git Setup at the official documentation: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup*
 
 ## Create a new repository
-* Go to an empty folder where you would be comfortable having a project.  For example, this lab will use C:\source\githol
+* Go to an empty folder where you would be comfortable having a project.  For example, this lab will use C:\source\gitpdn
 
 * Type `git init` in the empty folder
 
@@ -141,8 +141,8 @@ If you're new to Git, and haven't set a text editor of your own for Git, you wil
 ![The dreaded Vim](docs/images/the_dreaded_vim.png)
 
 Learning Vim (and how to exit Vim) is outside the scope of this tutorial.  But we'll get through this.
-* Hit the *I* key 
-* Type "Hello World"
+* Hit the **I** key (for *insert mode*)
+* Type `"Hello World"`
 * Hit the *Escape* key
 * Type `:x`
 * Hit the *Enter* key
@@ -195,45 +195,57 @@ When you use `git commit`, Git does (mostly) the following things:
 
 HEAD is the current commit that your workspace (your working area... your source folder) is deemed to be based on.  If you just commit all day, this is all very natural.  However, in the real world, we run into more complex problems, especially on teams.
 
-## Exploring git add
-To explore `git add` more, we're going to add more files.  Make sure you have the lab files.
+## Adding more files with git add
+If you go to the lab_files folder for the lab, you will find a few files that we can just copy into the source folder.  This just keeps us from having to create them.
 
-* Add the css and favicon files to the site
-* Add a new webpage, but it's not important what it is called
-* link up the new web page in the `<head>` section of index.html
+* Copy in the lab files
+* Link to them in the HTML by adding `<link rel="stylesheet" href="style.css">` to the `<head>` section of the web page.
+* Type `git status`
 
-We're doing this so we can see how to add multiple files in various states (modified and untracked) at once.
+![Multiple Changes](docs/images/git_status_multifile.png)
 
-### git add options
-* `git add <filename>`
-* `git add` can accept wildcards like `*.html`
-* The infamous `git add .`
-* The peculiar `git add -i` interactive
+It would be tedious to type `git add` for every file, so consider some options
+* You can use wildcards such as `git add *.css`
+* The ever infamous `git add .` - similar to git add --all (or -A)
+* The peculiar `git add -i`
 
-## git reset exploration
-git reset moves the "pointer" of your current branch.  It can be used to "amend", "adjust" or "erase" commits.
+Need to "unstage" some changes.  Use:
+`git reset HEAD <file>`
 
-## git reset --soft
-A soft reset moves the branch pointer and HEAD back but does not change your working area or your staging.  
+or leave out the file specifier to unstage everything.
 
-This is useful if you forgot a file, or maybe wanted to change the message.
+Once you have the files added, create a commit.
 
-* Use `git reset --soft HEAD~1 to back HEAD and your current branch to the previous commit.
-* Make any changes you like, including adding a file you forgot.
-* Use `git commit` again.
+## git reset to move your branch pointer
 
-## git reset --mixed
-A mixed reset moves the branch pointer and HEAD back but does not change your working area.  It resets the staging area as if you've not staged anything.
+`git reset` has multiple functions.  We just used it to take items out of staging.  
 
-This is useful if you want to keep the files in the state you were working on them but redo the staging process.
+It is also useful when you want to move your current branch pointer to another commit.  It can quite literally be any commit in the repository.
 
-## git reset --hard
-A hard reset moves the branch pointer and HEAD back.  It resets the staging area and it replaces all tracked files with the previous state.
+This is useful to "take back" a commit (or commits) even make a simple change to your last commit (which you can also use git commit --amend for, and we'll show that next).
 
-This is most like "deleting" a previous commit (or multiple).
+### git reset --soft to undo a commit, but leave working area and staging
+Let's use `git reset --soft HEAD~1` to undo the last commit without changing in your working area.
 
-## Commits last forever (sort of)
-It is easy to consider these operations destructive.  They are scary.  Even if you use GUI tools
+This removed the commit, but it **left your working files as is and your staging area as it was**.  You could basically just commit again right now.
 
-## git checkout <commit>
+You could also do more work.  This is often useful if you've forgotten something and left it untracked and you don't want the mess of a pretty meaningless commit that says "oops".
+
+* After using `git reset --soft`, add a new file.  Consider adding a new HTML page like before.  It doesn't matter that much.
+* Stage the new file
+* Use `git commit` to commit again.
+
+### git reset --mixed to reset staging, but leave working area alone
+* Use `git reset --mixed HEAD~1`
+* Note that all staging was removed (`git status`) but your files in the working area are the way you left them
+* Commit again
+
+Before going onto the next section, add another file.  Leave this file untracked.
+
+### git reset --hard to reset staging and working area to previous state
+* Use `git reset --hard HEAD~1`
+* Note that all staging was removed (`git status`) and your tracked files have been reverted to the state of this commit.
+* Tracked files are removed
+* Git does not care about untracked filse and does not touch them
+
 
