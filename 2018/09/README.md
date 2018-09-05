@@ -141,10 +141,10 @@ If you're new to Git, and haven't set a text editor of your own for Git, you wil
 ![The dreaded Vim](docs/images/the_dreaded_vim.png)
 
 Learning Vim (and how to exit Vim) is outside the scope of this tutorial.  But we'll get through this.
-* Hit the *I* key 
+* Hit the *i* key 
 * Type "Hello World"
 * Hit the *Escape* key
-* Type `:x`
+* Type `:q`
 * Hit the *Enter* key
 
 You have saved a commit with the message "Hello World" using Vim.  You have my condolences.
