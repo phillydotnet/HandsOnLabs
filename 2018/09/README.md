@@ -176,6 +176,11 @@ Let's make a second simple commit based on our first commit.
 
 Congrats, you're building a commit graph (history).
 
+## Explore git log
+git log just shows you the log.  This is a powerful feature.  For example: remember this command line
+
+`git log --oneline --abbrev-commit --all --graph --decorate --color`
+
 ## Add more commits
 Add at least three more commits.  You may choose to use your shiny new text editor setting by using `git commit`
 * Change index.html each time and save it
@@ -189,3 +194,46 @@ When you use `git commit`, Git does (mostly) the following things:
 * If you are on a branch (in this case, master), it moves the branch pointer up to the new commit as well.
 
 HEAD is the current commit that your workspace (your working area... your source folder) is deemed to be based on.  If you just commit all day, this is all very natural.  However, in the real world, we run into more complex problems, especially on teams.
+
+## Exploring git add
+To explore `git add` more, we're going to add more files.  Make sure you have the lab files.
+
+* Add the css and favicon files to the site
+* Add a new webpage, but it's not important what it is called
+* link up the new web page in the `<head>` section of index.html
+
+We're doing this so we can see how to add multiple files in various states (modified and untracked) at once.
+
+### git add options
+* `git add <filename>`
+* `git add` can accept wildcards like `*.html`
+* The infamous `git add .`
+* The peculiar `git add -i` interactive
+
+## git reset exploration
+git reset moves the "pointer" of your current branch.  It can be used to "amend", "adjust" or "erase" commits.
+
+## git reset --soft
+A soft reset moves the branch pointer and HEAD back but does not change your working area or your staging.  
+
+This is useful if you forgot a file, or maybe wanted to change the message.
+
+* Use `git reset --soft HEAD~1 to back HEAD and your current branch to the previous commit.
+* Make any changes you like, including adding a file you forgot.
+* Use `git commit` again.
+
+## git reset --mixed
+A mixed reset moves the branch pointer and HEAD back but does not change your working area.  It resets the staging area as if you've not staged anything.
+
+This is useful if you want to keep the files in the state you were working on them but redo the staging process.
+
+## git reset --hard
+A hard reset moves the branch pointer and HEAD back.  It resets the staging area and it replaces all tracked files with the previous state.
+
+This is most like "deleting" a previous commit (or multiple).
+
+## Commits last forever (sort of)
+It is easy to consider these operations destructive.  They are scary.  Even if you use GUI tools
+
+## git checkout <commit>
+
