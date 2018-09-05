@@ -141,10 +141,10 @@ If you're new to Git, and haven't set a text editor of your own for Git, you wil
 ![The dreaded Vim](docs/images/the_dreaded_vim.png)
 
 Learning Vim (and how to exit Vim) is outside the scope of this tutorial.  But we'll get through this.
-* Hit the **I** key (for *insert mode*)
-* Type `"Hello World"`
+* Hit the *i* key (for *insert mode*)
+* Type "Hello World"
 * Hit the *Escape* key
-* Type `:x`
+* Type `:q`
 * Hit the *Enter* key
 
 You have saved a commit with the message "Hello World" using Vim.  You have my condolences.
@@ -248,5 +248,4 @@ Before going onto the next section, add another file.  Leave this file untracked
 * Note that all staging was removed (`git status`) and your tracked files have been reverted to the state of this commit.
 * Tracked files are removed
 * Git does not care about untracked filse and does not touch them
-
 
