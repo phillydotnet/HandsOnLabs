@@ -1,9 +1,10 @@
 # Getting Started with Git Hands-On Lab
 Part one of this series covers installation options and git usage from the command line as a local source control repository.  Future labs will cover topics such as working with remote repositories, being part of a team, and using tools.
 
-## Selected Sections
+## Jump to Sections of this README
 [Installing Git](#installing-git)
-[Start of Lab Walkthrough]()
+
+[Start of Lab Walkthrough](#lab-start---getting-started-with-git)
 
 ## Meetup and Replay Information
 
