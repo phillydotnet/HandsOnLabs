@@ -209,6 +209,7 @@ It would be tedious to type `git add` for every file, so consider some options
 * The ever infamous `git add .` - similar to git add --all (or -A)
 * The peculiar `git add -i`
 
+## git reset to "unstage" some files
 Need to "unstage" some changes.  Use:
 `git reset HEAD <file>`
 
