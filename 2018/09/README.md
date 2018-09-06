@@ -29,7 +29,7 @@ https://www.meetup.com/Philly-NET/
 ### Git for Windows
 You will need Git installed and ready to use from the command prompt or Powershell to follow along with this lab.
 
-This lab installation guide covers Windows, but anyone with Git installed should be able to follow along.
+This lab installation guide covers Windows, but anyone with Git installed should be able to follow along on any OS.
 
 This lab will not use any other tools.  Future labs will cover IDE integration and tools.
 
@@ -37,7 +37,7 @@ This lab will not use any other tools.  Future labs will cover IDE integration a
 https://code.visualstudio.com/download
 
 
-We will demonstrate configuring a text editor for Git.  VS Code is convenient for this. 
+We will demonstrate configuring a text editor for Git.  Visual Studio Code is convenient for this. 
 
 ## Determine your current Git version
 ### Windows developers
