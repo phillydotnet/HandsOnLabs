@@ -10,10 +10,12 @@ Part two of the Git series covers setting up your GitHub account and creating yo
 ## Prerequisites
 Please make sure you and your machidevicene is ready with the following prerequisites:
 
-### Git for Windows
+### Git
 You will need Git installed and ready to use from the command prompt or Powershell to follow along with this lab.
 
 This lab installation guide covers Windows, but anyone with Git installed should be able to follow along on any OS.
+
+*(We will add Ubuntu Linux instructions before the lab, and we would accept help for Mac users with a pull request!)*
 
 This lab will not use any other tools.  Future labs will cover IDE integration and tools.
 
