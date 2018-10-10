@@ -314,6 +314,18 @@ Often it is a good idea to create an issue in the repository you are contributin
 Depending on time remaining we may:
 
 * Delete the branch in the forked repository after the pull request is accepted.
+![Create A GitHub account](docs/images/delete_branch.png)
 * Add pull requests to an in-progress pull request.
 * Sync up your fork with the original repository so you can keep working.
 * Delete our repository on GitHub, but keep the local one so we can see what it is like to push an existing repository to GitHub.
+
+# Want to Learn More?
+
+Suggested Videos:
+
+[Deep Dive into Git](https://www.youtube.com/watch?v=fBP18-taaNw) - Edward Thomson
+
+[MS Ignite 2018 -Top tips for Git powered teams](https://www.youtube.com/watch?v=08TRu14xioU) - If for no other reason watch at [18:15](https://youtu.be/08TRu14xioU?t=1095) for some advice about Pull Requests and checking them out on your local machine.
+
+* **Beware:** This seems to mess with some Git tools such as GitKraken, which already has a nice way for you to check out PRs.
+
