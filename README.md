@@ -6,10 +6,12 @@ Hands on Labs materials and Instructions categorized by year and month.  Video r
 ## October - Getting Started with GitHub
 [GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2018/10) - **GO HERE TO GET READY FOR LAB**
 
+[Watch Live on Mixer](https://www.mixer.com/PhillyDotNet)
+
 ## September - Getting Started with Git
 [GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2018/09)
 
-[Watch Live on Mixer](https://www.mixer.com/PhillyDotNet)
+[YouTube Replay](https://www.youtube.com/watch?v=SGzEpRdT7nk)
 
 ## August - Hands-On with Blazor
 [GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2018/08) 
