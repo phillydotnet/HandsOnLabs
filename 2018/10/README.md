@@ -42,7 +42,7 @@ Please see one of these guides for Git installation
 
 [Git for Mac](https://git-scm.com/download/mac) - official documentation
 
-[Quick First-Time Setup](../../docs/install_git/first_time_configuration.md)
+[Quick First-Time Setup](../../docs/install_git/first_time_configuration.md) - This includes setting your name/email address for Git and changing the default text editor.
 
 ## ** The following lab will assume you have completed the steps above **
 
