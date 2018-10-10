@@ -96,7 +96,7 @@ You can see this file in the User Profile folder:
 
 Git uses a cascading approach where it determines settings based on walking from the high machine level files to a local config file in your .git folder (as we will see later).
 
-*Read more about First-Time Git Setup at the official documentation: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup*
+*Read more about First-Time Git Setup at the official documentation: [Getting Started - First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)*
 
 ## Create a new repository
 * Go to an empty folder where you would be comfortable having a project.  For example, this lab will use C:\source\gitpdn
@@ -158,9 +158,9 @@ For this to work, Visual Studio Code needs to be in the path on Windows.
 
 You can actually set any editor you like by providing a command for the core.editor setting.
 
-*Read complete instructions for using VSCode as your git Editor here: https://code.visualstudio.com/docs/editor/versioncontrol#_vs-code-as-git-editor*
+*Read complete instructions for using VSCode as your git Editor here: [Visual Studio Code as Git Editor](https://code.visualstudio.com/docs/editor/versioncontrol#_vs-code-as-git-editor)*
 
-*Read more about setting your text editor at First-Time Git Setup at the official documentation.  Look for the section "Your editor": https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup*
+*Read more about setting your text editor at First-Time Git Setup at the official documentation.  Look for the section "Your editor": [Getting Started - First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)*
 
 
 ## Add a second commit purely from command line
@@ -232,7 +232,7 @@ This removed the commit, but it **left your working files as is and your staging
 
 You could also do more work.  This is often useful if you've forgotten something and left it untracked and you don't want the mess of a pretty meaningless commit that says "oops".
 
-* After using `git reset --soft`, add a new file.  Consider adding a new HTML page like before.  It doesn't matter that much.
+* After using `git reset --soft HEAD~1`, add a new file.  Consider adding a new HTML page like before.  It doesn't matter that much.
 * Stage the new file
 * Use `git commit` to commit again.
 
@@ -247,5 +247,5 @@ Before going onto the next section, add another file.  Leave this file untracked
 * Use `git reset --hard HEAD~1`
 * Note that all staging was removed (`git status`) and your tracked files have been reverted to the state of this commit.
 * Tracked files are removed
-* Git does not care about untracked filse and does not touch them
+* Git does not care about untracked files and does not touch them
 
