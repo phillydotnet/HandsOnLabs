@@ -3,10 +3,15 @@ Hands on Labs materials and Instructions categorized by year and month.  Video r
 
 # 2018
 
-## October - Getting Started with GitHub
-[GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2018/10) - **GO HERE TO GET READY FOR LAB**
+## November - Tools to Work With Git
+[GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2018/11)
 
 [Watch Live on Mixer](https://www.mixer.com/PhillyDotNet)
+
+## October - Getting Started with GitHub
+[GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2018/10)
+
+YouTube Replay - Link Coming
 
 ## September - Getting Started with Git
 [GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2018/09)
