@@ -68,6 +68,8 @@ If you go to a directory that contains a git repo you should see the prompt chan
 
 ## Using Git within Visual Studio Code
 
+Here is my new code
+
 Visual Studio Code is tightly integrated with Git.
 
 Open Visual Studio without any project. On the left hand side of the screen you should be able to see the Source Control Management (SCM) panel.
