@@ -93,6 +93,8 @@ On the left side of the screen you should see a number in the SCM button. Click 
 There is a text box at the top of the pane, enter a commit message and then hit the check mark (or Ctrl-Enter).
 A dialog box will open asking if you want to stage and commit the changes, click Yes.
 
+> Pro tip: If you don't want to stage the entire changeset of a file, you can open the "working tree" (change preview) and select a range of text.  After selecting a range, the right-click context menu allows you to `Stage Selected Ranges`
+
 At the bottom of the screen in the status bar you should see a double arrow in a circle with numbers and arrows next to them. Click on this and you will synchronize your changes.
 You may be asked to log into github again, if so, log in and continue.
 
