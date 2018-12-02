@@ -3,15 +3,20 @@ Hands on Labs materials and Instructions categorized by year and month.  Video r
 
 # 2018
 
+## December - Tools to Work With Git
+[GitHub Site] - Go here to get ready for lab(https://github.com/phillydotnet/HandsOnLabs/tree/master/2018/12)
+
+[Watch Live on Mixer](https://www.mixer.com/PhillyDotNet)
+
 ## November - Tools to Work With Git
 [GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2018/11)
 
-[Watch Live on Mixer](https://www.mixer.com/PhillyDotNet)
+[YouTube Replay](https://www.youtube.com/watch?v=PwLnaaX_gJQ)
 
 ## October - Getting Started with GitHub
 [GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2018/10)
 
-YouTube Replay - Link Coming
+[YouTube Replay](https://www.youtube.com/watch?v=9hz31McM7HY)
 
 ## September - Getting Started with Git
 [GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2018/09)

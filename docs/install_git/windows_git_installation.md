@@ -1,5 +1,13 @@
 # Installing Git (for Windows Developers)
-There are many ways to have Git installed on your machine.   Please read all of the options below and determine your best action:
+There are many ways to have Git installed on your machine.   
+
+1. Install Visual Studio 2017 - Select Git For Windows component
+2. Install Git for Windows
+3. Install via Chocolatey
+
+As of this writing, GitHub Desktop no longer installs Git (for command line usage), but still performs Git functions.  We suspect it is using a Git library internally.  If you are interested in this, check out [libgit2](https://libgit2.org/).  There are many different language implementations.
+
+Please read all of the options below and determine your best action:
 
 ## Install Visual Studio 2017
 Download - (https://visualstudio.microsoft.com/vs/)
