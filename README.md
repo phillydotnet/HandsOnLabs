@@ -1,12 +1,19 @@
 # HandsOnLabs
 Hands on Labs materials and Instructions categorized by year and month.  Video replays of labs are often available.  See the readme file in each folder.
 
-# 2018
+# 2019
 
-## December - Tools to Work With Git
-[GitHub Site] - Go here to get ready for lab(https://github.com/phillydotnet/HandsOnLabs/tree/master/2018/12)
+## January - Intro to Azure DevOps: Pipelines
+[GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2019/01) - Go here to get ready for lab
 
 [Watch Live on Mixer](https://www.mixer.com/PhillyDotNet)
+
+# 2018
+
+## December - Intro to Azure DevOps: Boards and Repos
+[GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2018/12)
+
+[YouTube Replay](https://www.youtube.com/watch?v=PwLnaaX_gJQ)
 
 ## November - Tools to Work With Git
 [GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2018/11)
