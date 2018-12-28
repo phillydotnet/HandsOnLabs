@@ -5,7 +5,7 @@
 Please make sure your device is ready with the following prerequisites:
 1. Azure DevOps Account
 2. Parts Unlimited Project from the [Azure DevOps Demo Generator](https://azuredevopsdemogenerator.azurewebsites.net/)
-
+3. Azure Account
 
 ### Azure DevOps Account
 You should create an [Azure DevOps Account](https://azure.microsoft.com/en-us/services/devops/) at https://devops.azure.com.  This requires a Microsoft account.
@@ -27,3 +27,7 @@ Note this task will create the PartsUnlimited project for you in Azure Repos.  Y
 
 **Tip:** We have found naming your project `PartsUnlimited` without any spaces can be beneficial when cloning the project locally.
 
+### Azure Account
+You will need an Azure Account to provision limited resources for the continuous delivery lab.  If you do not have an account, you can get a free account with credits to get started here: https://azure.com/free
+
+The amount of resources provisioned is very small and we will make sure everyone knows how to delete all resources when the lab ends.
