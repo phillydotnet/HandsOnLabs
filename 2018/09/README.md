@@ -16,7 +16,9 @@ The stream goes live around **5:45pm US EDT (UTC -4)** as we prepare the room fo
 We welcome everyone to join the Mixer chatroom and ask questions that will be relayed directly to the speaker.
 
 ### YouTube replay
-This lab will be recorded and you may watch a replay of this meetup and lab at our YouTube channel. Please like the video so we know to produce more of this type of content.  Please subscribe to the channel to get updates whenever we add more content from our meetups and events!
+Replay Link - https://youtu.be/SGzEpRdT7nk
+
+Please like the video so we know to produce more of this type of content.  Please subscribe to the channel to get updates whenever we add more content from our meetups and events!
 
 YouTube Channel - https://www.youtube.com/PhillyDotNet
 
