@@ -58,6 +58,9 @@ On the video, Rob showed a lot of features.  Besides the video, you can check ou
 # Visual Studio Live Share
 Visual Studio Live Share is an amazing collaboration tool that is "in the box" in Visual Studio 2019.  It is available as an extension in Visual Studio 2017 and as an extension of Visual Studio Code.
 
+Platform support for VS Live Share:
+https://docs.microsoft.com/en-us/visualstudio/liveshare/reference/platform-support
+
 # .NET Core in Visual Studio 2019
 .NET Core 2.2 is the latest version of .NET Core.  Visual Studio 2019 has tooling for .NET Core 2.2
 
