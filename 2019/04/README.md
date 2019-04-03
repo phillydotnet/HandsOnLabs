@@ -10,7 +10,7 @@ To help get you started, please read the prerequisites.
 
 ## Watch Live
 You can watch the lab live on any of our streaming platforms:
-- Mixer: https://mixer.com/phillysotnet
+- Mixer: https://mixer.com/phillydotnet
 - YouTube: https://youtube.com/phillydotnet
 - Twitch: https://twitch.tv/phillydotnet
 
@@ -42,7 +42,18 @@ Note that everything above is the latest as of the writing and delivery of the l
 
 Most attendees will install these for Windows, but Mac and Linux users can follow along with the .NET Core portions and Live Share portions using Visual Studio Code.
 
+# Visual Studio Launch Event
+
+On Channel 9, the prerecorded videos: https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2019-Launch-Event
+
+On YouTube, recordings from the live event: https://www.youtube.com/user/VisualStudio/videos
+
+
 # A Tour of Visual Studio 2019 
+
+On the video, Rob showed a lot of features.  Besides the video, you can check out more Productivity Enhancements on this video:
+
+**Video**: [Visual Studio 2019 Launch: Write beautiful code, faster](https://www.youtube.com/watch?v=KsGnywKg1vU)
 
 # Visual Studio Live Share
 Visual Studio Live Share is an amazing collaboration tool that is "in the box" in Visual Studio 2019.  It is available as an extension in Visual Studio 2017 and as an extension of Visual Studio Code.
@@ -59,3 +70,24 @@ However, if you want to enable .NET Core previews in the released product you ca
 - Check the "Use previews of .NET Core SDK" box
 
 ![Enable .NET Core Previews in VS 2019](docs/images/use-dotnet-preview.png)
+
+
+### Kestrel
+
+Rob talked about Kestrel, which is the cross platform web server for .NET core.
+
+You can learn more about Kestrel here: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-2.2
+
+### .NET Core Winforms
+
+**Note that this is preview and based on feedback there will be a Forms designer and other improvements to what is a very manual process today**
+
+The .NET Core blog has a post with the instructions to port the matching game to .NET Core Winforms
+https://devblogs.microsoft.com/dotnet/how-to-port-desktop-applications-to-net-core-3-0/
+
+The repository is here: https://github.com/OliaG/matching-game
+
+Scott Hunter and Olia Gavrysh create a short video here: https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2019-Launch-Event/Unifying-Windows-desktop-development-with-NET-Core-30
+
+Finally, this is a longer video going through the process:
+https://channel9.msdn.com/Shows/On-NET/How-to-port-desktop-applications-to-NET-Core-30
