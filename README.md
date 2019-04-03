@@ -3,7 +3,12 @@ Hands on Labs materials and Instructions categorized by year and month.  Video r
 
 # 2019
 
-## January - Intro to Azure DevOps: Pipelines
+## April - Visual Studio 2019 + .NET Core
+[GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2019/04) - Go here to get ready for lab
+
+[Watch Live on Mixer](https://www.mixer.com/PhillyDotNet)
+
+## January - Intro to Azure DevOps
 [GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2019/01) - Go here to get ready for lab
 
 [Watch Live on Mixer](https://www.mixer.com/PhillyDotNet)
