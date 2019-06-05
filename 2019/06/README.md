@@ -507,7 +507,7 @@ There is more to this so please read the reference:
 
 Reference: [Nullable reference types](https://docs.microsoft.com/en-us/dotnet/csharp/nullable-references)
 
-## Switch Expression
+## Switch Expressions
 For those times when you are using a switch statement but end up evaluating an expression afterwards, now you have switch expressions.
 
 One example is if you are simply using a switch to determine what to return from a function:
@@ -580,11 +580,206 @@ return programmer.Language switch
 Give some of these remaining tutorials a try
 
 ## Default Interface Implementations
+Suppose we had a good reason to modify an interface with a new member, but perhaps we cannot reasonably modify all of the implementations.  This could be because some of those implementations are in a library we can't change.
+
+Default interface implementations might be a way to add generic default functionality for new interface members without having to recompile all implementations.
+
+Suppose you started with this Program.cs
+
+```C#
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace CSharpEight
+{
+    interface IMessage
+    {
+        void Insert(string text, DateTime time);
+        IEnumerable<string> Read(string id);
+    }
+
+    public class TwitterMessage : IMessage
+    {
+        private string _tweet = string.Empty;
+        private DateTime _timeOfTweet = DateTime.MinValue;
+        public void Insert(string text, DateTime time) {
+            _tweet = text;
+            _timeOfTweet = time;
+        }
+        public IEnumerable<string> Read(string id) => Enumerable.Empty<string>();
+    }
+
+    public class NntpMessage : IMessage
+    {
+        private string _message = "NO MESSAGE";
+        public void Insert(string text) => _message = text ?? "NO MESSAGE";
+        public void Insert(string text, DateTime time) => Insert(text);
+        public IEnumerable<string> Read(string id) => Enumerable.Empty<string>();
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var message = new TwitterMessage();
+
+            // NntpMessage was implemented much later after TwitterMessage
+            // and needed an implementation for Insert(string)
+            // The interface was updated and released,
+            // but TwitterMessage hasn't changed!
+        }
+    }
+}
+```
+
+First of all, in its current state, NntpMessage has an extra implemented member that is not part of the IMessage interface.
+
+Suppose we decide that it would be nice if all IMessage implementers had this member, but what can we do now?  We realize we could provide a default implementation that would be generic enough to work for all of today's implementers.
+
+So we could add this default interface implementation **right into the interface definition**.
+
+```C#
+void Insert(string text)
+{
+    Insert(text, DateTime.UtcNow);
+}
+```
+
+If you like expression bodied members, you could use this instead:
+
+```C#
+void Insert(string text) => Insert(text, DateTime.UtcNow);
+```
+
+**NOTE: Do not use both of these implementations.  The latter simply demonstrates a different syntax for the same thing.**
+
+Now we have a default implementation that is reasonable.  Even though our app uses the TwitterMessage (which we presume cannot be updated) we can still use this implementation!
+
+The key is that we have to have a reference to the *interface*, not the TwitterMessage implementation.
+
+Change the Main method to look like this:
+
+```C#
+var message = new TwitterMessage();
+
+var imessage = message as IMessage;
+imessage.Insert("hello world");
+```
+
+Please consider this more in-depth tutorial as well:
+
 [Tutorial: Update interfaces with default interface members in C# 8.0](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/default-interface-members-versions)
 
 ## Pattern Matching
+Suppose we started with these classes.  These classes might all be in different libraries or not. You might own all the code or not.  That isn't relevant to pattern matching.
+
+```C#
+public class Car
+{
+    public int Passengers { get; set; }
+}
+
+public class DeliveryTruck
+{
+    public int GrossWeightClass { get; set; }
+}
+
+public class Taxi
+{
+    public int Fares { get; set; }
+}
+
+public class Bus
+{
+    public int Capacity { get; set; }
+    public int Riders { get; set; }
+}
+```
+
+You might have considered that these types should be in an inheritance hierarchy, which is still a good idea to consider.  What if this would be cumbersome to implement?  We have pattern matching syntax that might help us make decisions among these types without any additional redesign.
+
+Now let's implement a toll calculator class that merely charges each vehicle based on type:
+
+This is called a switch expression with **type patterns**.
+
+```C#
+public class TollCalculator
+{
+    public decimal CalculateToll(object vehicle) =>
+        vehicle switch
+        {
+            Car c => 2.00m,
+            Taxi t => 3.50m,
+            Bus b => 5.00m,
+            DeliveryTruck t => 10.00m,
+            { } => throw new ArgumentException(message: "Not a known vehicle type", paramName: nameof(vehicle)),
+            null => throw new ArgumentNullException(nameof(vehicle))
+        };
+}
+```
+To try it out, this simple code in Main will do the trick:
+
+```C#
+static void Main(string[] args)
+{
+    var calc = new TollCalculator();
+    var result = calc.CalculateToll(new Car { Passengers = 2 });
+
+    Console.WriteLine($"The result is {result}");
+}
+```
+
+Suppose we wanted to make decisions based on types AND properties.  Let's rewrite the switch expression in the TollCalculator to use **property patterns**.
+
+```C#
+public decimal CalculateToll(object vehicle) =>
+    vehicle switch
+    {
+        Car { Passengers: 0 } => 2.00m + 0.50m,
+        Car { Passengers: 1 } => 2.0m,
+        Car { Passengers: 2 } => 2.0m - 0.50m,
+        Car c => 2.00m - 1.0m,
+        Taxi { Fares: 0 } => 3.50m + 1.00m,
+        Taxi { Fares: 1 } => 3.50m,
+        Taxi { Fares: 2 } => 3.50m - 0.50m,
+        Taxi t => 3.50m - 1.00m,
+        { } => throw new ArgumentException(message: "Not a known vehicle type", paramName: nameof(vehicle)),
+        null => throw new ArgumentNullException(nameof(vehicle))
+    };
+```
+
+In this example we only added patterns for the Car and Taxi types, but you can see we also are drilling into properties of these objects as well!
+
+This final sample adds in more patterns, including **recursive patterns**, which lets us make decisions based on expressions within the patterns!
+
+```C#
+public decimal CalculateToll(object vehicle) =>
+    vehicle switch
+    {
+        Car { Passengers: 0 } => 2.00m + 0.50m,
+        Car { Passengers: 1 } => 2.0m,
+        Car { Passengers: 2 } => 2.0m - 0.50m,
+        Car c => 2.00m - 1.0m,
+
+        Taxi { Fares: 0 } => 3.50m + 1.00m,
+        Taxi { Fares: 1 } => 3.50m,
+        Taxi { Fares: 2 } => 3.50m - 0.50m,
+        Taxi t => 3.50m - 1.00m,
+
+        Bus b when ((double)b.Riders / (double)b.Capacity) < 0.50 => 5.00m + 2.00m,
+        Bus b when ((double)b.Riders / (double)b.Capacity) > 0.90 => 5.00m - 1.00m,
+        Bus b => 5.00m,
+
+        DeliveryTruck t when (t.GrossWeightClass > 5000) => 10.00m + 5.00m,
+        DeliveryTruck t when (t.GrossWeightClass < 3000) => 10.00m - 2.00m,
+        DeliveryTruck t => 10.00m,
+    };
+```
+
+(As an aside, note that switch expressions let you leave a trailing comma without being pedantic and complaining about it).
+
+We really recommend you look at this entire sample, including the GitHub repository mentioned to see even more ways to clean up the code, reduce the 'length' of this code, and try to make it easy to understand the business rules being implemented at a glance.
+
+
 [Tutorial: Using pattern matching features to extend data types](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/pattern-matching)
-
-## Null Unconstrained Type Parameter
-
-## Static Local Functions
