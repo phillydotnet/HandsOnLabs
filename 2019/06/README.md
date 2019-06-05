@@ -331,7 +331,7 @@ class Program
     }
 ```
 
-## Implicitly Scoprd Using Statement
+## Implicitly Scoped Using Statement
 Change Program.cs to be this listing (or comment out irrelevant code):
 
 ```C#
