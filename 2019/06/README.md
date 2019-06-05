@@ -1,4 +1,4 @@
-# C# 8 (Preview) Hands-On Lab
+# .NET Core 3 (Preview) and C# 8 (Preview) Hands-On Lab
 
 **June 5th, 2019 6:00PM EDT (UTC -4)**
 
@@ -28,6 +28,108 @@ Note that everything above is the latest as of the writing and delivery of the l
 
 Most attendees will install these for Windows, but Mac and Linux users can follow along with the C# 8 portions using Visual Studio Code.
 
+# Hands-On with .NET Core 3 (Preview)
+This lab will focus on .NET Core 3 You should have already downloaded and installed Visual Studio 2019 preview.
+.NET Core 3 can be downloaded from here:
+
+https://dotnet.microsoft.com/download/dotnet-core/3.0
+
+Clone or download the zip from here:
+
+https://github.com/OliaG/matching-game
+
+## Converting a Framework Windows Forms 
+- Open the match game project in Visual Studio and run it. This is running the Framework version. 
+- Modify the UI project
+    1. Unload the project
+    1. remove all the contents
+    1. Replace the contents with the following code
+``` 
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MatchingGame.Logic\MatchingGame.Logic.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+</Project>
+```
+- Now update the logic project
+    1. unload the project file and replace its contents with this
+```
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+  </PropertyGroup>
+</Project>
+```
+- Try to build the project 
+- Update the project file by changing it to look like this
+```
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+</Project>
+```
+- Now build and it should work.
+- Modify the target framework to *netstandard2.0*
+- Now build and notice the errors
+- Add the following nuget package
+    - microsoft.windows.compatibility
+- to see other compatibility issuses add microsoft.dotnet.analyzers.compatibility
+- rebuild
+
+- Create a .NET Core 3 Winforms project
+    - dotnet new winforms -o MatchingGameCore
+- go back to VS and
+Add existing project
+- Set the new project as the startup project
+- Run the solution
+- get rid of all the code
+- open the project file and
+add 
+```
+  <ItemGroup>
+    <Compile Include="..\MatchingGame\**\*.cs" />
+  </ItemGroup>
+```
+- Files should start to show up in the new project.
+
+- Add the following to the project file
+``` 
+  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+ ```
+- build
+- add reference from logic code
+
+- build 
+- run
+
+- Modify the mainform
+  You may have to unload the core project for this to work...
+
+    - double click on the mainform - you should see the designer open. If not then
+  unload the core project and try again.
+
+    - Reload the core project and you can edit the form in the designer.
+
+- Build a standalone EXE file
+    - in the .netcore project directory run the following command line
+
+```
+dotnet publish -r win10-x64 /p:PublishSingleFile=true
+```
+
+- go to the bin\debug\netcoreapp3.0\win10-x64\publish directory and you should see a single exe
+  run this - the game should start. This is a self contained exe (very large)
 # Hands-On with C# 8 (Preview)
 
 ## Setting your project to use C# 8
