@@ -44,7 +44,8 @@ https://github.com/OliaG/matching-game
     1. Unload the project
     1. remove all the contents
     1. Replace the contents with the following code
-``` 
+
+``` XML
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -60,18 +61,22 @@ https://github.com/OliaG/matching-game
   </ItemGroup>
 </Project>
 ```
+
 - Now update the logic project
     1. unload the project file and replace its contents with this
-```
+
+```XML
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
   </PropertyGroup>
 </Project>
 ```
+
 - Try to build the project 
 - Update the project file by changing it to look like this
-```
+- 
+```XML
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
@@ -79,6 +84,7 @@ https://github.com/OliaG/matching-game
   </PropertyGroup>
 </Project>
 ```
+
 - Now build and it should work.
 - Modify the target framework to *netstandard2.0*
 - Now build and notice the errors
@@ -88,25 +94,29 @@ https://github.com/OliaG/matching-game
 - rebuild
 
 - Create a .NET Core 3 Winforms project
-    - dotnet new winforms -o MatchingGameCore
+    - `dotnet new winforms -o MatchingGameCore`
 - go back to VS and
 Add existing project
 - Set the new project as the startup project
 - Run the solution
 - get rid of all the code
 - open the project file and
-add 
-```
+add
+
+```XML
   <ItemGroup>
     <Compile Include="..\MatchingGame\**\*.cs" />
   </ItemGroup>
 ```
+
 - Files should start to show up in the new project.
 
 - Add the following to the project file
-``` 
+
+```XML
   <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
- ```
+```
+
 - build
 - add reference from logic code
 
