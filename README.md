@@ -3,6 +3,11 @@ Hands on Labs materials and Instructions categorized by year and month.  Video r
 
 # 2019
 
+## June - C# 8 Preview Hands On Lab
+[GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2019/06) - Go here to get ready for lab
+
+[Watch Live on Mixer](https://www.mixer.com/PhillyDotNet)
+
 ## April - Visual Studio 2019 + .NET Core
 [GitHub Site](https://github.com/phillydotnet/HandsOnLabs/tree/master/2019/04) - Go here to get ready for lab
 
