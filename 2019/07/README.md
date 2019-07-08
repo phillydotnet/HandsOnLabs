@@ -42,3 +42,10 @@ See Microsoft's documentation for for Blazor setup for any last minute changes o
 - [Get started with ASP.NET Core Blazor](https://docs.microsoft.com/en-us/aspnet/core/blazor/get-started?view=aspnetcore-3.0&tabs=visual-studio)   
 
 # Hands-On Lab: Getting Started With Blazor
+
+
+
+
+
+
+[//]: # (Part II Content Below Here)
