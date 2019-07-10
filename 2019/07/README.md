@@ -16,7 +16,7 @@ The recording of this lab will be available at our [YouTube Channel](https://you
 ## Prerequisites
 Please make sure your device is ready with the following prerequisites:
 1. Visual Studio 2019 **Preview**, any edition (Community, Professional, or Enterprise).
-    - You can download from https://visualstudio.microsoft.com/.
+    - You can download from https://visualstudio.microsoft.com/vs/preview/.
     - Community edition is free and bits are identical to Professional.
     - For the purposes of this lab, it is recommended you install:
         - The .NET desktop development workload
@@ -37,7 +37,7 @@ Most attendees will install these for Windows, but Mac and Linux users can follo
 **Mac Users** - This blog post from Fabio Cozzolino demonstrates developing Blazor apps on a Mac with Visual Studio Code: [Develop a Blazor project with Visual Studio Code on Mac](http://www.fabiocozzolino.eu/develop-blazor-project-visual-studio-code-mac/).
 
 ### Setup for Blazor
-See Microsoft's documentation for for Blazor setup for any last minute changes or for details on using Visual Studio Code or .NET Command Line Tools
+See Microsoft's documentation for Blazor setup for any last minute changes or for details on using Visual Studio Code or .NET Command Line Tools
 
 - [Get started with ASP.NET Core Blazor](https://docs.microsoft.com/en-us/aspnet/core/blazor/get-started?view=aspnetcore-3.0&tabs=visual-studio)   
 
