@@ -52,12 +52,15 @@ See Microsoft's documentation for Blazor setup for any last minute changes or fo
 
 ## Create your first Blazor app
 ### File > New Project
-In Visual Studio, From the File > New Project menu, select a new ASP.NET Core Web Application:
-![File > New Project](docs/images/first_blazor_app_new_project.png)
 
-### New Blazor Application
-In Visual Studio, select **Blazor** in the New ASP.NET Core Web Application dialog:
-![New Blazor Application](docs/images/new_project_blazor_webasm.png)
+In Visual Studio, create a new ASP.NET Core Web Application:
+![New Blazor Application](docs/images/file_np_aspnetcoreweb.jpg)
+
+Call the solution **TryBlazor**
+![TryBlazor](docs/images/tryblazor.jpg)
+
+For this lab, use the Blazor (client-side) template:
+![Blazor Client Side](docs/images/blazor-client-side.jpg)
 
 #### (Creating Project from Command Line)
 Alternatively, you may also create this application from the command line with:
@@ -213,22 +216,13 @@ Let's change that.
 ### Add data files to your application
 Add the following files to your sample-data folder in wwwroot.  This will allow us to simulate calling an api and retrieving JSON.
 
-- [roster.json](docs\files\roster.json)
+- [roster.json](https://raw.githubusercontent.com/SpaceShot/HandsOnLabs/master/2019/07/docs/files/roster.json)
 
 Change the GetJsonAsync call to use this file instead:
 
 ```C#
 roster = await Http.GetJsonAsync<TeamRoster>($"sample-data/roster.json");
 ```
-
-
-
-
-
-
-
-
-
 
 ### Simple routing
 Go to **Shared\NavMenu.cshtml** and examine how Blazor's Routing component sets up navigation.  The `<NavLink>` component is used to create an HTML link that obeys and triggers Blazor routing.
