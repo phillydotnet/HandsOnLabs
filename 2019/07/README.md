@@ -107,7 +107,7 @@ Type the following code into **Roster.razor**.  You will paste a complete implem
         <pre>@roster</pre>
     }
 
-    @functions {
+    @code {
         string roster;
     }
 
@@ -140,7 +140,7 @@ Now we can make a simple Http request.
 ### Blazor page lifecycle
 We can take action when a Blazor page is loaded, still writing C# code that will be executed in the browser.     
 
-Add the following function to the `@functions` section:
+Add the following function to the `@code` section:
 
     protected override async Task OnInitAsync()
     {
@@ -152,13 +152,13 @@ At least you are now getting the JSON back from the web service.
 ### Deserializing and binding made easy
 We're going to deserialize the JSON into plain C# objects.
 
-Change the definition of `roster` in the `@functions` section to be a class that we are about to define.
+Change the definition of `roster` in the `@code` section to be a class that we are about to define.
 
 ```C#
 TeamRoster roster;
 ```
 
-Add the following classes to the bottom of the `@functions` section:
+Add the following classes to the bottom of the `@code` section:
 
 ```C#
 // C# classes to deserialize JSON
@@ -167,7 +167,7 @@ public class TeamRoster
     public Member[] results { get; set; }
 }
 
-public class Result
+public class Member
 {
     public string gender { get; set; }
     public Name name { get; set; }
@@ -224,24 +224,13 @@ Change the GetJsonAsync call to use this file instead:
 roster = await Http.GetJsonAsync<TeamRoster>($"sample-data/roster.json");
 ```
 
-### Simple routing
-Go to **Shared\NavMenu.cshtml** and examine how Blazor's Routing component sets up navigation.  The `<NavLink>` component is used to create an HTML link that obeys and triggers Blazor routing.
-
-Add a new nav item to this list, anywhere you like, that looks like the following:
-    
-    <li class="nav-item px-3">
-        <NavLink class="nav-link" href="roster">
-            <span class="oi oi-list-rich" aria-hidden="true"></span> Team Roster
-        </NavLink>
-    </li>
-
 ### Refactoring to models
 Let's move those plain C# classes for deserialization to another file.
 
 Create a Models folder and create a file called **RosterModels.cs**.  Let's move the user model classes over there now by copying the following code into **RosterModels.cs**:
 
 ``` C#
-public class Result
+public class Member
 {
     public string gender { get; set; }
     public Name name { get; set; }
@@ -273,11 +262,13 @@ We used to add interactivity to HTML elements with attributes like `onclick`.  W
 
 Add some Razor markup right after your `<h1>Team Roster</h1>` heading in **Roster.razor**:
 
+```C#
     @if (!string.IsNullOrEmpty(saywhat))
     {
         <h3>Selected Teammates</h3>
         <p>&nbsp;@saywhat</p>
     }
+```
 
 Change the `<img>` markup to add an attribute as follows:
 
@@ -285,7 +276,7 @@ Change the `<img>` markup to add an attribute as follows:
 
 You can see these working together to call a function named `SelectUser` that we haven't written yet.  Let's do that now.
 
-Add these items to the `@functions` section. Put the field near the top with the parameter declaration and the function after our lifecycle method overrides:
+Add these items to the `@code` section. Put the field near the top with the parameter declaration and the function after our lifecycle method overrides:
 ```C#
 private string saywhat;
 
@@ -305,7 +296,7 @@ Change the `<img>` element to call your function passing a lamdba expression:
 <img src="@member.picture.thumbnail" @onclick=@(e => SelectUser(e, member)) />
 ```
 
-We're going to keep a list of Result items now, so add this field in the `@functions` section:
+We're going to keep a list of Result items now, so add this field in the `@code` section:
 ```C#
 private List<Member> selectedTeammates = new List<Member>();
 ```
@@ -338,15 +329,15 @@ Finally, let's change the markup so it can accept this new list as it forms:
 ### Start breaking out child components
 While this lab is not going to complete the project, we can still show how you can create and render child components.
 
-Create a new folder called **Components** and create a Razor View (or plain text file) called **HeadingComponent.cshtml**
+Create a new folder called **Components** and create a Razor View (or plain text file) called **HeadingComponent.razor**
 
 Let's create the markup for the child component, and we will not need any directives at all:
 
     <h3 style="font-style:@FontStyle; font-family:@FontFamily">@Content</h3>
 
-Now the `@functions` section will declare the parameters used in the Razor markup:
+Now the `@code` section will declare the parameters used in the Razor markup:
 
-    @functions {
+    @code {
         [Parameter]
         private string FontStyle { get; set; } = "bold";
 
@@ -367,3 +358,64 @@ When you run the application now, you will see we've broken out our heading into
 Try passing those parameters that were declared with the `[Parameter]` attribute:
 
     <HeadingComponent FontFamily="italic" FontStyle="serif" Content="Our Magnificent Team Selections" />
+
+### A Clean "Code-Behind" Experience
+If you add another model, this time to represent the code for the Roster page:
+Add to the Models folder (and therefore namespace)
+
+Note:
+
+- ComponentBase
+- protected members instead of private
+- [Inject] attribute
+- getters and setters
+
+For more information: https://docs.microsoft.com/en-us/aspnet/core/blazor/components?view=aspnetcore-3.0#base-class-inheritance-for-a-code-behind-experience
+
+Also, see Gunnar Peipman's post on the subject with the understanding that it is not updated for Preview 6:
+https://gunnarpeipman.com/blazor/blazor-code-behind/
+
+**RosterPageModels.cs**
+```C#
+using Microsoft.AspNetCore.Components;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+namespace TryBlazor.Models
+{
+    public class RosterPageModel : ComponentBase
+    {
+        [Inject]
+        protected HttpClient Http { get; set; }
+
+        protected TeamRoster roster { get; set; }
+        protected List<Member> selectedTeammates = new List<Member>();
+
+        protected override async Task OnInitAsync()
+        {
+            roster = await Http.GetJsonAsync<TeamRoster>($"sample-data/roster.json");
+        }
+
+        protected void SelectUser(UIMouseEventArgs e, Member teamMember)
+        {
+            selectedTeammates.Add(teamMember);
+        }
+    }
+}
+```
+
+Delete the `@code` section in Roster.razor and inherit this model:
+
+    @inherits RosterPageModel
+
+### Debugging
+
+Shift-Alt-D
+Learn more: 
+https://docs.microsoft.com/en-us/aspnet/core/blazor/debug?view=aspnetcore-3.0
+
+### Blazing Pizza
+You should really run through this sample on GitHub.  It's a fantastic sample that brings it all together for .NET Core 3.0
+
+https://github.com/dotnet-presentations/blazor-workshop
