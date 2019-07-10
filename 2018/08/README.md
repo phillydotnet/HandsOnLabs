@@ -84,8 +84,7 @@ Add a new file to the Pages folder named **Roster.cshtml**.  You can also do thi
 Type the following code into **Roster.cshtml**.  You will paste a complete implementation later, but try to type in this small sample.
 
     @page "/roster"
-    @inject HttpClient Http
-
+    
     <h1>Team Roster</h1>
 
     @if (roster == null)
