@@ -43,11 +43,6 @@ See Microsoft's documentation for Blazor setup for any last minute changes or fo
 
 # Hands-On Lab: Getting Started With Blazor
 
-
-
-
-
-
 [//]: # (Part II Content Below Here)
 
 ## Create your first Blazor app
@@ -419,3 +414,28 @@ https://docs.microsoft.com/en-us/aspnet/core/blazor/debug?view=aspnetcore-3.0
 You should really run through this sample on GitHub.  It's a fantastic sample that brings it all together for .NET Core 3.0
 
 https://github.com/dotnet-presentations/blazor-workshop
+
+## Videos
+You should watch this video released today:
+
+Blazor, a new framework for browser-based .NET apps - Steve Sanderson
+https://www.youtube.com/watch?v=uW-Kk7Qpv5U
+
+(This was the previous version from three months ago)
+https://www.youtube.com/watch?v=0RfUPr0KrSM
+
+Find any interview or video with Dan Roth, who explains this all very well:
+https://www.youtube.com/watch?v=SnQ1Vb4fFsk
+
+Ed Charbeneau - Blazor "StateHasChanged"
+https://edcharbeneau.com/
+https://www.twitch.tv/edcharbeneau
+https://twitter.com/edcharbeneau
+
+Chris Gomez
+
+https://twitter.com/SpaceShot
+
+https://mixer.com/SpaceShot
+
+https://twitch.tv/SpaceShot
