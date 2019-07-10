@@ -331,7 +331,7 @@ class Program
     }
 ```
 
-## Implicitly Scoprd Using Statement
+## Implicitly Scoped Using Statement
 Change Program.cs to be this listing (or comment out irrelevant code):
 
 ```C#
@@ -568,12 +568,12 @@ namespace CSharpEight
 With switch expressions, the switch statement could now look like this
 
 ```C#
-return programmer.Language switch
+return "You chose " + programmer.Language switch
 {
-    "C#" => customMessage += ".NET Certification",
-    "VB" => customMessage += "Maintenance Certification",
-    "F#" => customMessage += "Future Certification",
-    _ => customMessage += "No Certification"
+    "C#" => ".NET Certification",
+    "VB" => "Maintenance Certification",
+    "F#" => "Future Certification",
+    _ =>  "No Certification"
 };
 ```
 
