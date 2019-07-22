@@ -4,14 +4,16 @@
 
 To help get you started, please read the prerequisites.
 
+## Replay
+The recording of this lab ise available at our [YouTube Channel](https://youtube.com/phillydotnet) along with all past recordings and content.
+
+Replay of Hands-On Lab: https://www.youtube.com/watch?v=miZmPJRWJq8
+
 ## Watch Live
 You can watch the lab live on any of our streaming platforms.  Questions from the chat rooms will be asked live at the meetup:
 - Mixer: https://mixer.com/phillydotnet
 - YouTube: https://youtube.com/phillydotnet
 - Twitch: https://twitch.tv/phillydotnet
-
-## Replay
-The recording of this lab will be available at our [YouTube Channel](https://youtube.com/phillydotnet) along with all past recordings and content.
 
 ## Prerequisites
 Please make sure your device is ready with the following prerequisites:
@@ -439,3 +441,6 @@ https://twitter.com/SpaceShot
 https://mixer.com/SpaceShot
 
 https://twitch.tv/SpaceShot
+
+The official docs are great, too!
+https://docs.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-3.0
