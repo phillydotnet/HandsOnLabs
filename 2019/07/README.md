@@ -300,7 +300,7 @@ private List<Member> selectedTeammates = new List<Member>();
 
 Change `SelectUser()` to be a proper delegate that accepts an additional parameter of type `Member`.
 ```C#
-private void SelectUser(UIMouseEventArgs e, Member teamMember)
+private void SelectUser(MouseEventArgs e, Member teamMember)
 {
     selectedTeammates.Add(teamMember);
 }
