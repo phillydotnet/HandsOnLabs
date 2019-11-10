@@ -139,7 +139,7 @@ We can take action when a Blazor page is loaded, still writing C# code that will
 
 Add the following function to the `@code` section:
 
-    protected override async Task OnInitAsync()
+    protected override async Task OnInitializedAsync()
     {
         roster = await Http.GetStringAsync($"https://randomuser.me/api/?results=10");
     }
@@ -269,7 +269,7 @@ Add some Razor markup right after your `<h1>Team Roster</h1>` heading in **Roste
 
 Change the `<img>` markup to add an attribute as follows:
 
-    <img src="@member.picture.thumbnail" onclick=@SelectUser/>
+    <img src="@member.picture.thumbnail" @onclick=@SelectUser/>
 
 You can see these working together to call a function named `SelectUser` that we haven't written yet.  Let's do that now.
 
@@ -300,7 +300,7 @@ private List<Member> selectedTeammates = new List<Member>();
 
 Change `SelectUser()` to be a proper delegate that accepts an additional parameter of type `Member`.
 ```C#
-private void SelectUser(UIMouseEventArgs e, Member teamMember)
+private void SelectUser(MouseEventArgs e, Member teamMember)
 {
     selectedTeammates.Add(teamMember);
 }
