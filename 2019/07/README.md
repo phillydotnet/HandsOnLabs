@@ -139,7 +139,7 @@ We can take action when a Blazor page is loaded, still writing C# code that will
 
 Add the following function to the `@code` section:
 
-    protected override async Task OnInitAsync()
+    protected override async Task OnInitializedAsync()
     {
         roster = await Http.GetStringAsync($"https://randomuser.me/api/?results=10");
     }
