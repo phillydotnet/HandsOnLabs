@@ -269,7 +269,7 @@ Add some Razor markup right after your `<h1>Team Roster</h1>` heading in **Roste
 
 Change the `<img>` markup to add an attribute as follows:
 
-    <img src="@member.picture.thumbnail" onclick=@SelectUser/>
+    <img src="@member.picture.thumbnail" @onclick=@SelectUser/>
 
 You can see these working together to call a function named `SelectUser` that we haven't written yet.  Let's do that now.
 
